@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+.registration_form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.form-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-button i {
+  font-size: 30px;
+  color: #5569cdd6;
+  transform: scale(1);
+}
+
+.back-button a{
+    text-decoration: none;  
+}
+
+
+.input-register input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.password-register input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.college-select{
+  max-width: 90%;
+  margin-bottom: 15px;
+}
+
+.college-select .MuiInputBase-root {
+  padding: 0 !important; /* Remove outer padding */
+  font-size: 14px;        /* Optional: smaller font for compact appearance */
+}
+
+.college-select .MuiInputBase-input {
+  padding: 6px 6px !important; /* Adjust inner padding */
+}
+
+.college-select .MuiAutocomplete-inputRoot {
+  padding: 3px !important; /* Remove extra space */
+}
+
+.college-select .MuiFormLabel-root {
+  top: -6px; /* Adjust label position if needed */
+  font-size: 15px;
+}
+
+.title-register {
+  margin-bottom: 50px;
+  margin-top: 0%;
+  text-align: center;
+}
+
+.title-register h1{
+    font-size: 38px;
+    font-weight: bold;
+    color: #6054cc;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+.title-register h5{
+  color: #000f9b;
+}
+
+.reg_button {
+  border: 0;
+  background-color: #dc2626;
+  color: #FFF;
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+  width: 80px;
+  transform: scale(1);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.reg_button:hover {
+  transform: scale(1.05);
+  background-color: #b91c1c;
+}
+
+.User {
+  margin-top: 10px;
+}
+
+.password-container {
+  width: 100%;
+  max-width: 90%; /* optional, for consistent width */
+}
+
+.instruction {
+  background-color: #eef3ff;
+  border: 1px solid #cfe0ff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+  list-style: none;
+  font-size: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.instruction li {
+  margin: 8px 0;
+  padding-left: 22px;
+  position: relative;
+}
+
+.instruction li::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+}

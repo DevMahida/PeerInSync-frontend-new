@@ -1,0 +1,91 @@
+.navbar {
+  background: #133457;
+  display: flex;
+  width: 100%;
+}
+
+.logo-title {
+  display: flex;
+  margin-left: 20px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.logo-title img{
+  width: 80px;
+  border-radius: 15%;
+}
+
+.logo-title h1{
+  color: #ffffffe6;
+  padding-left: 10px;
+}
+
+.menu-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  margin-left: 700px;
+  margin-right: 70px;
+  
+}
+
+.menu-bar span{
+  color: #ffffffe6;
+  cursor: pointer;
+}
+
+.home-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.register_button{
+  margin-right: 20px;
+}
+
+.register_button a/* here a is for anchor tag os that the underline stuff can be removed*/{
+  background-color: #dc2626; 
+  color: #ffffff; 
+  font-weight: 600; 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); 
+  transition: all    0.3s ease-in-out; 
+  transform: scale(1); 
+  width: 60px; 
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.register_button:hover a{
+  background-color: #b91c1c;
+  transform: scale(1.05); 
+}
+
+.Login-button a/* here a is for anchor tag os that the underline stuff can be removed*/{
+  background-color: #dc2626; 
+  color: #ffffff; 
+  font-weight: 600; 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); 
+  transition: all    0.3s ease-in-out; 
+  transform: scale(1); 
+  width: 60px; 
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.Login-button:hover a{
+  background-color: #b91c1c;
+  transform: scale(1.05); 
+}
