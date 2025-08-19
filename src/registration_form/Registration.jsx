@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-    // CODE BY DARSH
+// CODE BY DARSH
 import axios from 'axios';
 
 import '../registration_form/Registration.css';
@@ -65,11 +65,19 @@ const Registration = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
         setFormData(initialFormData);
 
-        window.alert("You have registered successfully.");
-        navigate('/');
+        axios.post('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/signup')
+            .then(() => {
+                window.alert("You have registered successfully.");
+                navigate('/');
+                console.log("Form submitted:", formData);  
+            })
+
+            .catch((err) => {
+                console.log(err);
+                window.alert("Error submiting data." + err.message);
+            });  
     };
 
     const handleChange = (e) => {
@@ -88,7 +96,7 @@ const Registration = () => {
                     <form onSubmit={handleSubmit} className="form-content">
 
                         <div className="back-button">
-                            <Link to="/"><i class="ri-arrow-left-line"></i></Link>
+                            <Link to="/"><i className="ri-arrow-left-line"></i></Link>
                         </div>
 
                         <div className="title-register">

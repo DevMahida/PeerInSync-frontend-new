@@ -1,13 +1,33 @@
-.navbar {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.home-header{
   background: #133457;
+}
+
+.container{
+  max-width: 1320px;
+  margin:auto;
+}
+
+.navbar {
   display: flex;
-  width: 100%;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.Logo-Title {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .logo-title {
   display: flex;
-  margin-left: 20px;
-  padding: 8px;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -16,19 +36,17 @@
   border-radius: 15%;
 }
 
-.logo-title h1{
+.web-title{
   color: #ffffffe6;
+  display: flex;
   padding-left: 10px;
 }
 
 .menu-bar{
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 70px;
-  margin-left: 700px;
-  margin-right: 70px;
-  
+  /* margin-right: 70px; */
 }
 
 .menu-bar span{
@@ -39,11 +57,8 @@
 .home-buttons{
   display: flex;
   align-items: center;
+  gap: 20px;
   justify-content: space-between;
-}
-
-.register_button{
-  margin-right: 20px;
 }
 
 .register_button a/* here a is for anchor tag os that the underline stuff can be removed*/{
