@@ -26,6 +26,8 @@ const Registration = () => {
         user: '',
     };
 
+    const [showPassword, setShowPassword] = useState(false);
+
     const [passwordErrors, setPasswordErrors] = useState([]);
 
     const handleCollegeChange = (event, newValue) => {
@@ -71,13 +73,13 @@ const Registration = () => {
             .then(() => {
                 window.alert("You have registered successfully.");
                 navigate('/');
-                console.log("Form submitted:", formData);  
+                console.log("Form submitted:", formData);
             })
 
             .catch((err) => {
                 console.log(err);
                 window.alert("Error submiting data." + err.message);
-            });  
+            });
     };
 
     const handleChange = (e) => {
@@ -122,7 +124,11 @@ const Registration = () => {
                         <div className='password-register'>
                             <label htmlFor="password">Password:</label><br />
                             <div className='password-container'>
-                                <input type="text" name='password' id='password' value={formData.password} onChange={handlePasswordChange} required />
+                                <div className="register-password">
+                                    <input type={showPassword ? "text" : "password"} name="password" value={formData.password} onChange={handlePasswordChange} required />
+                                    <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line"} onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}></i>
+                                </div>
+
                                 {
                                     passwordErrors.length > 0 && (
                                         <ul className='instruction'>
