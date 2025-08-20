@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Login/Login.css';
-import email_icon from '../assets/email.png';
-import password_icon from '../assets/password.png';
-import eyeOpen from '../assets/eye_open.png';
-import eyeClose from '../assets/close-eye.png';
-import back_button from '../assets/back_button.png';
-
 
 const Login = () => {
 
