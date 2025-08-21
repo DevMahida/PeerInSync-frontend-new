@@ -44,7 +44,7 @@ const Home = () => {
                             <span>About</span>
                             <span>Help</span>
                         </div>
-                        {/* <div></div> */}
+
                         <div className="home-buttons">
                             <div className="register_button">
                                 <Link to="/Registration">Register</Link>
