@@ -38,7 +38,6 @@ const Home = () => {
                                 <img src={pis_logo} alt="" width={60} />
                                 <h1 className="web-title">PeerInSync</h1>
                             </Link>
-                        {/* <div></div> */}
                         </div>
                         <div className="menu-bar">
                             <span>Home</span>
