@@ -23,7 +23,7 @@ const Registration = () => {
         branch: '',
         study_year: '',
         gender: '',
-        user: '',
+        role: '',
     };
 
     const [showPassword, setShowPassword] = useState(false);
