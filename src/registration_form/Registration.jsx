@@ -8,23 +8,26 @@ import '../registration_form/Registration.css';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import colleges from '../javaScript/Colleges.js';
+import { createFilterOptions } from '@mui/material/Autocomplete';
 
 const Registration = () => {
     const navigate = useNavigate();
 
     const initialFormData = {
-        fname: '',
-        lname: '',
+        fName: '',
+        lName: '',
         email: '',
         password: '',
         mobile_no: '',
-        cname: '',
-        course: '',
+        college_name: '',
+        course_name: '',
         branch: '',
-        study_year: '',
+        current_year_of_study: '',
         gender: '',
         role: '',
     };
+
+    const filterOptions = createFilterOptions({ limit: 50 });
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -33,7 +36,7 @@ const Registration = () => {
     const handleCollegeChange = (event, newValue) => {
         setFormData(prev => ({
             ...prev,
-            cname: newValue ? newValue.label : '',
+            college_name: newValue ? newValue.label : '',
         }));
     };
 
@@ -69,11 +72,14 @@ const Registration = () => {
         e.preventDefault();
         setFormData(initialFormData);
 
-        axios.post('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/signup')
+        axios.post('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/signup', JSON.stringify(formData),{
+            headers: {
+                "Content-Type": "application/json"
+            }})
             .then(() => {
                 window.alert("You have registered successfully.");
                 navigate('/');
-                console.log("Form submitted:", formData);
+                console.log("Form submitted:", JSON.stringify(formData));
             })
 
             .catch((err) => {
@@ -107,13 +113,13 @@ const Registration = () => {
                         </div>
 
                         <div className='input-register'>
-                            <label htmlFor="fname">First Name:</label><br />
-                            <input type="text" name='fname' id='fname' value={formData.fname} onChange={handleChange} required />
+                            <label htmlFor="fName">First Name:</label><br />
+                            <input type="text" name='fName' id='fName' value={formData.fName} onChange={handleChange} required />
                         </div>
 
                         <div className='input-register'>
-                            <label htmlFor="lname">Last Name:</label><br />
-                            <input type="text" name='lname' id='lname' value={formData.lname} onChange={handleChange} required />
+                            <label htmlFor="lName">Last Name:</label><br />
+                            <input type="text" name='lName' id='lName' value={formData.lName} onChange={handleChange} required />
                         </div>
 
                         <div className='input-register'>
@@ -149,10 +155,11 @@ const Registration = () => {
                         <div className='college-select'>
                             <Autocomplete
                                 disablePortal
-                                id="cname"
+                                id="college_name"
                                 options={colleges}
+                                filterOptions={filterOptions}
                                 sx={{ width: '100%' }}
-                                value={colleges.find(option => option.label === formData.cname) || null}
+                                value={colleges.find(option => option.label === formData.college_name) || null}
                                 onChange={handleCollegeChange}
                                 renderInput={(params) => (
                                     <TextField {...params} label="Select College" required />
@@ -161,13 +168,13 @@ const Registration = () => {
                         </div>
 
                         <div className='input-register'>
-                            <label htmlFor="study_year">Current Year of Studying:</label><br />
-                            <input type="text" name='study_year' id='study_year' value={formData.study_year} onChange={handleChange} required />
+                            <label htmlFor="current_year_of_study">Current Year of Studying:</label><br />
+                            <input type="text" name='current_year_of_study' id='current_year_of_study' value={formData.current_year_of_study} onChange={handleChange} required />
                         </div>
 
                         <div className='input-register'>
-                            <label htmlFor="course">Course:</label><br />
-                            <input type="text" name='course' id='course' value={formData.course} onChange={handleChange} required />
+                            <label htmlFor="course_name">Course:</label><br />
+                            <input type="text" name='course_name' id='course_name' value={formData.course_name} onChange={handleChange} required />
                         </div>
 
                         <div className='input-register'>
@@ -187,9 +194,9 @@ const Registration = () => {
 
                         <div className='User'>
                             <span>Join As : </span>
-                            <input type="radio" name='user' value="alumni" id='Alumni' required checked={formData.user == "alumni"} onChange={handleChange} />
+                            <input type="radio" name='role' value="alumni" id='Alumni' required checked={formData.role == "alumni"} onChange={handleChange} />
                             <label htmlFor="Alumni">Alumni</label>
-                            <input type="radio" name='user' value="student" id='Student' checked={formData.user == "student"} onChange={handleChange} />
+                            <input type="radio" name='role' value="student" id='Student' checked={formData.role == "student"} onChange={handleChange} />
                             <label htmlFor="Student">Student</label>
                         </div>
 
