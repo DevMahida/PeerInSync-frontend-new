@@ -32,20 +32,21 @@ const Home = () => {
         <>
             <header className="home-header">
                 <div className="container">
-                    <div className="navbar">
+                    <div className="navbar flex">
                         <div className="Logo-Title">
                             <Link to="/" className="logo-title">
                                 <img src={pis_logo} alt="" width={60} />
                                 <h1 className="web-title">PeerInSync</h1>
                             </Link>
                         </div>
+
                         <div className="menu-bar">
                             <span>Home</span>
                             <span>About</span>
                             <span>Help</span>
                         </div>
 
-                        <div className="home-buttons">
+                        <div className="home-buttons flex">
                             <div className="register_button">
                                 <Link to="/Registration">Register</Link>
                             </div>
@@ -53,10 +54,11 @@ const Home = () => {
                                 <Link to="/Login">Login</Link>
                             </div>
                         </div>
+
+
                     </div>
 
-
-                </div >
+                </div>
 
             </header>
 

@@ -1,3 +1,5 @@
+/* justify-content: flex-end; */
+
 *{
   padding: 0;
   margin: 0;
@@ -12,18 +14,17 @@
   margin:auto;
 }
 
-.navbar {
+.flex{
   display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
   align-items: center; 
   justify-content: space-between;
   padding: 10px;
 }
 
-.Logo-Title {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
 
 .logo-title {
   display: flex;
@@ -45,18 +46,19 @@
 .menu-bar{
   display: flex;
   align-items: center;
-  gap: 70px;
-  /* margin-right: 70px; */
+
 }
 
 .menu-bar span{
   color: #ffffffe6;
   cursor: pointer;
+  margin:20px
 }
 
 .home-buttons{
   display: flex;
   align-items: center;
+  margin: 10px 0;
   gap: 20px;
   justify-content: space-between;
 }
