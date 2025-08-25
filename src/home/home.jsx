@@ -40,20 +40,24 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        <div className="menu-bar">
-                            <span>Home</span>
-                            <span>About</span>
-                            <span>Help</span>
+                        <div className="right-part">
+                            <div className="menu-bar">
+                                <span>Home</span>
+                                <span>About</span>
+                                <span>Help</span>
+                            </div>
+
+                            <div className="home-buttons flex">
+                                <div className="register_button">
+                                    <Link to="/Registration">Register</Link>
+                                </div>
+                                <div className="Login-button">
+                                    <Link to="/Login">Login</Link>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="home-buttons flex">
-                            <div className="register_button">
-                                <Link to="/Registration">Register</Link>
-                            </div>
-                            <div className="Login-button">
-                                <Link to="/Login">Login</Link>
-                            </div>
-                        </div>
+
 
 
                     </div>

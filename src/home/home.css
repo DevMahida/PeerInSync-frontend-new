@@ -43,6 +43,11 @@
   padding-left: 10px;
 }
 
+.right-part{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .menu-bar{
   display: flex;
   align-items: center;
