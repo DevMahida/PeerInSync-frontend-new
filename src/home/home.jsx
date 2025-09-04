@@ -40,13 +40,13 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        <div className="right-part">
-                            <div className="menu-bar">
-                                <span>Home</span>
-                                <span>About</span>
-                                <span>Help</span>
-                            </div>
-
+                        <nav className="right-part">
+                            <ul className="menu-bar">
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Help</li>
+                            </ul> 
+                            
                             <div className="home-buttons flex">
                                 <div className="register_button">
                                     <Link to="/Registration">Register</Link>
@@ -55,7 +55,7 @@ const Home = () => {
                                     <Link to="/Login">Login</Link>
                                 </div>
                             </div>
-                        </div>
+                        </nav>
 
 
 

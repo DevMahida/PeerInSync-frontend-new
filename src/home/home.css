@@ -4,7 +4,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  list-style-type: none;
 }
+
 .home-header{
   background: #133457;
 }
@@ -54,7 +57,7 @@
 
 }
 
-.menu-bar span{
+.menu-bar li{
   color: #ffffffe6;
   cursor: pointer;
   margin:20px
