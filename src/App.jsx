@@ -6,13 +6,15 @@ import Login from './Login/Login.jsx';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Registration' element={<Register />} />
-        <Route path='/Login' element={<Login/>} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Registration' element={<Register />} />
+          <Route path='/Login' element={<Login/>} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
