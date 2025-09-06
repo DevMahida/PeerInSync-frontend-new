@@ -32,7 +32,7 @@ const Login = () => {
                     <form onSubmit={handleSubmit}>
 
                         <div className='back-button'>
-                            <Link to="/"><i class="ri-arrow-left-line"></i></Link>
+                            <Link to="/"><i className="ri-arrow-left-line"></i></Link>
                         </div>
 
                         <div className='title-login'>
@@ -42,14 +42,14 @@ const Login = () => {
 
 
                         <div className="input-login">
-                            <i class="ri-mail-line"></i>
-                            <input type="email" placeholder="Email Id" name="email" value={formData.email} onChange={handleChange} autoComplete='additional-name' required />
+                            <i className="ri-mail-line"></i>
+                            <input type="email" placeholder="Email Id" name="email" autoComplete="email" value={formData.email} onChange={handleChange}  required />
                         </div>
 
                         <div className="input-login">
-                            <i class="ri-lock-password-line"></i>
+                            <i className="ri-lock-password-line"></i>
                             
-                            <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" value={formData.password} onChange={handleChange} required />
+                            <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" autoComplete="current-password" value={formData.password} onChange={handleChange} required />
 
                             <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line"} onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}></i>
                         </div>

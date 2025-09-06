@@ -8,7 +8,6 @@ import dis_forums from '../assets/images/discussion-forums.png';
 import profile from '../assets/images/profile.png';
 import profile1 from '../assets/images/profile1.png';
 import collab from '../assets/images/collaboration.png';
-
 import './home.css';
 
 //CODE BY DARSH
@@ -140,7 +139,7 @@ const Home = () => {
                             <p>Connecting Students and Alumni for Mentorship and Growth</p>
                         </div>
                     </nav>
-                    <p className="copyright"><i class="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Studnets</p>
+                    <p className="copyright"><i className="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Studnets</p>
                 </div>
             </footer>
 
