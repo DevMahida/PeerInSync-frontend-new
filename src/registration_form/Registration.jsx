@@ -163,12 +163,15 @@ const Registration = () => {
                                 value={colleges.find(option => option.label === formData.college_name) || null}
                                 onChange={handleCollegeChange}
                                 renderInput={(params) => (
-                                    <TextField {...params} label="Select College" required slotProps={{
-                                        input: {
+                                    <TextField
+                                        {...params}
+                                        label="Select College"
+                                        required
+                                        inputProps={{
                                             ...params.inputProps,
                                             autoComplete: 'off',
-                                        },
-                                    }} />
+                                        }}
+                                    />
                                 )}
                             />
                         </div>

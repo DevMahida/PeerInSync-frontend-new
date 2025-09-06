@@ -6,10 +6,12 @@
   margin: 0;
   box-sizing: border-box;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 /* Make sure html and body cover the screen */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -17,7 +19,8 @@ html, body {
 }
 
 /* Wrap the whole page */
-#root, .app {
+#root,
+.app {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /*full viewport*/
@@ -38,7 +41,7 @@ main {
   flex-wrap: wrap;
 }
 
-.justify-content{
+.justify-content {
   justify-content: space-evenly;
 }
 
@@ -47,8 +50,8 @@ main {
 }
 
 /* ################################################################################
-                                  Header
-################################################################################### */
+                                    Header
+  ################################################################################### */
 
 .home-header {
   background: #0051ae;
@@ -57,7 +60,7 @@ main {
 .navbar {
   align-items: center;
   justify-content: space-between;
-  padding: 0.625rem; /* 10px */
+  padding: 0.625rem 0;/* 10px */
 }
 
 .logo-title {
@@ -93,17 +96,23 @@ main {
   margin: 1.25rem; /* 20px */
 }
 
+.menu-bar li a{
+  text-decoration: none;
+  color: #fbeede;
+}
+
 /* ################################################################################
-                                  Main
-################################################################################### */
+                                    Main
+  ################################################################################### */
 
 /*################################## Banner #######################################*/
 .banner {
   padding: 5rem; /* 80px */
   width: 100%;
   color: #ffffff;
-  background-image: url(../assets/images/banner-home.jpg);
+  background-image: url('../assets/images/home-banner.jpg');
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: bottom;
   background-color: #152e456b;
@@ -120,7 +129,7 @@ main {
 .banner p {
   font-size: 1.25rem; /* 20px */
   max-width: 45%;
-  margin: 2.5rem 0; /* 40px */
+  margin: 2.5rem 0;/* 40px */
 }
 
 .banner-button {
@@ -150,9 +159,11 @@ main {
   margin: 1.875rem; /* 30px */
   padding: 1.875rem 0; /* 30px */
   background-color: #e7f3fc;
+  border-radius: 10px;
 }
 
 .why-us h2 {
+  color: #054595;
   text-align: center;
   margin-bottom: 1.25rem; /* 20px */
 }
@@ -172,6 +183,7 @@ main {
 
 /*######################## How It Works #############################*/
 .works h2 {
+  color: #054595;
   text-align: center;
 }
 
@@ -219,8 +231,8 @@ main {
 }
 
 /* ################################################################################
-                                  Footer
-################################################################################### */
+                                    Footer
+  ################################################################################### */
 
 .home-footer {
   padding: 1.875rem; /* 30px */
@@ -235,6 +247,11 @@ main {
 .home-footer ul li {
   font-size: 1.125rem; /* 18px */
   cursor: pointer;
+}
+
+.home-footer ul li a{
+  text-decoration: none;
+  color: #fbeede;
 }
 
 .footer-logo p {

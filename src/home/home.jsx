@@ -1,13 +1,13 @@
-import React from "react";
+
 import { Link } from 'react-router-dom';
 import pis_logo1 from '../assets/images/pisLogo1.png';
-import al_dicret from '../assets/images/alumni-directory.png';
-import mem_prog from '../assets/images/membership-program.png';
-import event_cal from '../assets/images/event-calender.png';
-import dis_forums from '../assets/images/discussion-forums.png';
-import profile from '../assets/images/profile.png';
-import profile1 from '../assets/images/profile1.png';
-import collab from '../assets/images/collaboration.png';
+import al_dicret from '../assets/images/home-alumni-directory.png';
+import mem_prog from '../assets/images/home-membership-program.png';
+import event_cal from '../assets/images/home-event-calender.png';
+import dis_forums from '../assets/images/home-discussion-forums.png';
+import profile from '../assets/images/home-profile.png';
+import profile1 from '../assets/images/home-profile1.png';
+import collab from '../assets/images/home-collaboration.png';
 import './home.css';
 
 //CODE BY DARSH
@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
         <>
-            <header className="home-header">
+            <header className="home-header" id='home'>
                 <div className="container">
                     <div className="navbar flex">
                         <div className="Logo-Title">
@@ -49,8 +49,8 @@ const Home = () => {
 
                         <nav className="right-part">
                             <ul className="menu-bar">
-                                <li>Home</li>
-                                <li>About</li>
+                                <li><Link to='/'>Home</Link></li>
+                                <li><Link to='/About'>About</Link></li>
                                 <li>Help</li>
                             </ul>
                         </nav>
@@ -127,8 +127,8 @@ const Home = () => {
                 <div className="container ">
                     <nav className="flex justify-content">
                         <ul className="footer-bar">
-                            <li>Home</li>
-                            <li>About</li>
+                            <li><a href="#home">Home</a></li>
+                            <li><Link to='/About'>About</Link></li>
                             <li>Help</li>
                         </ul>
                         <div className="footer-logo flex">
