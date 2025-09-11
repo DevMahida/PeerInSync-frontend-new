@@ -13,6 +13,7 @@
   --primary-color:#0051ae;
   --secondary-color:#fbeede;
   --bg-color:#d3e9fb;
+  --color-white:#FFF;
 }
 
 /* Make sure html and body cover the screen */
@@ -35,6 +36,12 @@ body {
 /* Main expands to push footer down */
 main {
   flex: 1;
+}
+
+header{
+  position: sticky;
+  top:0;
+  z-index: 1;
 }
 
 .container {

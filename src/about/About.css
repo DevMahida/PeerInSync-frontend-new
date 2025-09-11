@@ -2,6 +2,8 @@
     --primary-color:#0051ae;
     --secondary-color:#fbeede;
     --bg-color:#d3e9fb;
+    --color-white:#FFF;
+    --banner-bg:
   }
 
 .justify-content1 {
@@ -89,12 +91,11 @@
     padding: 5rem;
     /* 80px */
     width: 100%;
-    color: #FFF;
-    background-image: url('../assets/images/about-banner.webp');
+    color: var(--color-white);
+    background-image: url('../assets/images/about-banner.webp'), linear-gradient(135deg, #4ba8f5, #1e88e500);
     background-size: contain 300px;
     background-repeat: no-repeat;
     background-position: right;
-    background-color: #12656854;
     background-blend-mode: color;
 }
 
