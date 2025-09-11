@@ -9,13 +9,19 @@
   scroll-behavior: smooth;
 }
 
+:root{
+  --primary-color:#0051ae;
+  --secondary-color:#fbeede;
+  --bg-color:#d3e9fb;
+}
+
 /* Make sure html and body cover the screen */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #d3e9fb;
+  background-color: var(--bg-color);
 }
 
 /* Wrap the whole page */
@@ -54,7 +60,7 @@ main {
   ################################################################################### */
 
 .home-header {
-  background: #0051ae;
+  background: var(--primary-color);
 }
 
 .navbar {
@@ -75,7 +81,7 @@ main {
 }
 
 .web-title {
-  color: #fbeede;
+  color: var(--secondary-color);
   display: flex;
   padding-left: 0.625rem; /* 10px */
 }
@@ -91,14 +97,14 @@ main {
 }
 
 .menu-bar li {
-  color: #fbeede;
+  color: var(--secondary-color);
   cursor: pointer;
   margin: 1.25rem; /* 20px */
 }
 
 .menu-bar li a{
   text-decoration: none;
-  color: #fbeede;
+  color: var(--secondary-color);
 }
 
 /* ################################################################################
@@ -109,7 +115,7 @@ main {
 .banner {
   padding: 5rem; /* 80px */
   width: 100%;
-  color: #ffffff;
+  color: var(--secondary-color);
   background-image: url('../assets/images/home-banner.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -142,8 +148,8 @@ main {
   font-size: 1.25rem; /* 20px */
   border-radius: 0.625rem; /* 10px */
   border: none;
-  color: #ffffff;
-  background-color: #0051ae;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
   transform: scale(1);
   cursor: pointer;
   transition: all 0.2s linear;
@@ -151,7 +157,7 @@ main {
 
 .banner-button button:hover {
   transform: scale(1.05);
-  box-shadow: 0.0625rem 0.0625rem 0.625rem #075ab9; /* 1px 1px 10px */
+  box-shadow: 0.0625rem 0.0625rem 0.625rem var(--primary-color); /* 1px 1px 10px */
 }
 
 /*######################## Why PeerInSync? #############################*/
@@ -163,7 +169,7 @@ main {
 }
 
 .why-us h2 {
-  color: #054595;
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 1.25rem; /* 20px */
 }
@@ -183,7 +189,7 @@ main {
 
 /*######################## How It Works #############################*/
 .works h2 {
-  color: #054595;
+  color: var(--primary-color);
   text-align: center;
 }
 
@@ -218,7 +224,7 @@ main {
   font-size: 2.8125rem; /* 45px */
   top: 4.3125rem; /* 69px */
   left: -8.875rem; /* 142px */
-  color: #1d4ed8;
+  color: var(--primary-color);
 }
 
 .works .card-container .card:last-child:after {
@@ -227,7 +233,7 @@ main {
   font-size: 2.8125rem; /* 45px */
   top: 5.4375rem; /* 87px */
   left: -8.25rem; /* 132px */
-  color: #1d4ed8;
+  color: var(--primary-color);
 }
 
 /* ################################################################################
@@ -236,7 +242,7 @@ main {
 
 .home-footer {
   padding: 1.875rem; /* 30px */
-  background-color: #0051ae;
+  background-color: var(--primary-color);
   color: #ffffff;
 }
 
