@@ -79,7 +79,7 @@ const Registration = () => {
         })
             .then(() => {
                 window.alert("You have registered successfully.");
-                navigate('/');
+                navigate('/Login');
                 console.log("Form submitted:", JSON.stringify(formData));
             })
 
