@@ -39,13 +39,26 @@ const About = () => {
                 <section className="who-we-are">
                     <div className="container">
                         <h2>Who We Are</h2>
-                        <div className="data flex row-reverse justify-content1">
-                            <p>PeerinSync is a platform designed to strengthen the bond between alumni and students by creating a space for connection, mentorship, and collaboration. We believe in fostering meaningful experiences and making the process of building such connections simple and impactful.</p>
-                            <div className="banner-side-img">
-                                <img src={pic_banner} alt="" />
-                            </div>
                         </div>
-                    </div>
+                        <div className="container flex all-center">
+                            <div className="col-8">
+                                <div className="who-we-are-data">
+                                    <p>
+                                        PeerInSync is a platform designed to bridge the gap between students and alumni by fostering mentorship, collaboration, and lifelong connections. It helps students gain real-world insights, career guidance, and support from experienced alumni. By creating a space for meaningful interactions and shared learning, PeerInSync encourages personal growth and professional development. Our goal is to build a strong, supportive community where experiences are shared, opportunities are created, and learning never stops.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-4">
+                                <div className="banner-side-img all-center">
+                                    <img src={pic_banner} alt="" width="80%" />
+                                </div>
+                            </div>
+
+                            {/* <p>
+                            PeerInSync is a platform designed to bridge the gap between students and alumni by fostering mentorship, collaboration, and lifelong connections. It helps students gain real-world insights, career guidance, and support from experienced alumni. By creating a space for meaningful interactions and shared learning, PeerInSync encourages personal growth and professional development. Our goal is to build a strong, supportive community where experiences are shared, opportunities are created, and learning never stops.
+                            </p>
+                             */}
+                        </div>
                 </section>
 
                 <section className="our-mission">
