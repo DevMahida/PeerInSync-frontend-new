@@ -7,7 +7,8 @@ import './About.css';
 const About = () => {
     return (
         <>
-            <header className="about-header" id="about">
+        <div id="about"></div>
+            <header className="about-header">
                 <div className="container">
                     <div className="navbar flex">
                         <div className="Logo-Title">
@@ -21,13 +22,13 @@ const About = () => {
                             <ul className="menu-bar">
                                 <li><Link to='/'>Home</Link></li>
                                 <li><Link to='/About'>About</Link></li>
-                                <li>Help</li>
+                                <li><Link to='/Help'>Help</Link></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </header>
-
+            
             <main>
                 <section className="about-banner">
                     <div className="container">
@@ -95,7 +96,7 @@ const About = () => {
                         <ul className="footer-bar">
                             <li><Link to="/">Home</Link></li>
                             <li><a href='#about'>About</a></li>
-                            <li>Help</li>
+                            <li><Link to='/Help'>Help</Link></li>
                         </ul>
                         <div className="footer-logo flex">
                             <Link to="/" className="logo-title">
@@ -105,7 +106,7 @@ const About = () => {
                             <p>Connecting Students and Alumni for Mentorship and Growth</p>
                         </div>
                     </nav>
-                    <p className="copyright"><i className="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Studnets</p>
+                    <p className="copyright"><i className="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Students</p>
                 </div>
             </footer>
         </>

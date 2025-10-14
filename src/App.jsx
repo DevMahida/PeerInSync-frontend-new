@@ -5,6 +5,7 @@ import Home from './home/home.jsx';
 import Register from './registration_form/Registration.jsx';
 import Login from './Login/Login.jsx';
 import About from './about/About.jsx';
+import Help from './help/Help.jsx';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/Registration' element={<Register/>} />
           <Route path='/Login' element={<Login/>} />
           <Route path='/About' element={<About/>} />
+          <Route path="/Help" element={<Help />} />
         </Routes>
       </Router>
     </div>

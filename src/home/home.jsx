@@ -37,7 +37,8 @@ const Home = () => {
 
     return (
         <>
-            <header className="home-header" id='home'>
+        <div id="home"></div>
+            <header className="home-header">
                 <div className="container">
                     <div className="navbar flex">
                         <div className="Logo-Title">
@@ -51,7 +52,7 @@ const Home = () => {
                             <ul className="menu-bar">
                                 <li><Link to='/'>Home</Link></li>
                                 <li><Link to='/About'>About</Link></li>
-                                <li>Help</li>
+                                <li><Link to='/Help'>Help</Link></li>
                             </ul>
                         </nav>
                     </div>
@@ -129,7 +130,7 @@ const Home = () => {
                         <ul className="footer-bar">
                             <li><a href="#home">Home</a></li>
                             <li><Link to='/About'>About</Link></li>
-                            <li>Help</li>
+                            <li><Link to='/Help'>Help</Link></li>
                         </ul>
                         <div className="footer-logo flex">
                             <Link to="/" className="logo-title">
@@ -139,7 +140,7 @@ const Home = () => {
                             <p>Connecting Students and Alumni for Mentorship and Growth</p>
                         </div>
                     </nav>
-                    <p className="copyright"><i className="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Studnets</p>
+                    <p className="copyright"><i className="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Students</p>
                 </div>
             </footer>
 

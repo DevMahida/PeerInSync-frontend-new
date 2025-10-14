@@ -14,6 +14,7 @@
   --secondary-color:#fbeede;
   --bg-color:#d3e9fb;
   --color-white:#FFF;
+  --section-bg: #e7f3fc;
 }
 
 /* Make sure html and body cover the screen */
@@ -171,7 +172,7 @@ header{
 .why-us {
   margin: 1.875rem; /* 30px */
   padding: 1.875rem 0; /* 30px */
-  background-color: #e7f3fc;
+  background-color: var(--section-bg);
   border-radius: 10px;
 }
 
