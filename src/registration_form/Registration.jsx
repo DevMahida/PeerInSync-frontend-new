@@ -154,6 +154,7 @@ const Registration = () => {
                         </div>
 
                         <div className='college-select'>
+                            <label htmlFor="college_name">College Name</label>
                             <Autocomplete
                                 disablePortal
                                 id="college_name"
@@ -178,7 +179,14 @@ const Registration = () => {
 
                         <div className='input-register'>
                             <label htmlFor="current_year_of_study">Current Year of Studying:</label><br />
-                            <input type="text" name='current_year_of_study' id='current_year_of_study' autoComplete='off' value={formData.current_year_of_study} onChange={handleChange} required />
+                            <select name="current_year_of_study" id="current_year_of_study" value={formData.current_year_of_study} onChange={handleChange} required >
+                                <option>Year of Studying</option>
+                                <option value="1st year">1st Year</option>
+                                <option value="2nd year">2nd Year</option>
+                                <option value="3rd year">3rd Year</option>
+                                <option value="4th year">4th Year</option>
+                                <option value="graduated">Graduated</option>
+                            </select>
                         </div>
 
                         <div className='input-register'>

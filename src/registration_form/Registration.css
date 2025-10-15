@@ -37,6 +37,26 @@
   border-radius: 0.25rem; /* 4px */
 }
 
+.input-register label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.password-register label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.input-register select {
+  width: 90%;
+  padding: 0.5rem; /* 8px */
+  margin-bottom: 0.9375rem; /* 15px */
+  border: 0.0625rem solid #ccc; /* 1px */
+  border-radius: 0.25rem; /* 4px */
+}
+
+
+
 .password-register input {
   width: 95%;
   padding: 0.5rem; /* 8px */
@@ -58,6 +78,11 @@
 .college-select {
   max-width: 90%;
   margin-bottom: 0.9375rem; /* 15px */
+}
+
+.college-select label{
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 .college-select .MuiInputBase-root {
