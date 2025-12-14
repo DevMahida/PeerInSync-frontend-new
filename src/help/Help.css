@@ -1,179 +1,40 @@
-:root{
-    --primary-color:#0051ae;
-    --secondary-color:#fbeede;
-    --bg-color:#d3e9fb;
-    --color-grey:#495057;
-    --color-white:#FFF;
-    --section-bg: #e7f3fc;
-    --form-bg:#ffffffe6;
+.bg-cs-footer1{
+    background-color: #f8e7d1 !important;
 }
 
-.flex{
-    display: flex;
-    flex-wrap: wrap;
+.bg-cs-footer2{
+    background-color: #838c48;
 }
 
-.all-center{
-    display: flex;
-    justify-items: center;
-    align-items: center;
-}
-
-.justify-center{
-  justify-content: center;
-}
-
-/* ################################################################################
-                                    Header
-  ################################################################################### */
-
-.help-header{
-    background-color: var(--primary-color);
-}
-
-.help-header .navbar {
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.625rem 0;
-    /* 10px */
-}
-
-.help-header .logo-title {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.help-header .logo-title img {
-    width: 5rem;
-    /* 80px */
-    border-radius: 15%;
-}
-
-.help-header .web-title {
-    color: var(--secondary-color);
-    display: flex;
-    padding-left: 0.625rem;
-    /* 10px */
-}
-
-.help-header .right-part {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.help-header .menu-bar {
-    display: flex;
-    align-items: center;
-}
-
-.help-header .menu-bar li {
-    color: var(--secondary-color);
-    cursor: pointer;
-    margin: 1.25rem;
-    /* 20px */
-}
-
-.help-header .menu-bar li a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-/* ################################################################################
-                                    main
-  ################################################################################### */
-
-.help-form-wrapper{
-  max-width: 60%;
-  margin: auto;
-}
-
-.help-form{
-  background-color: var(--section-bg);
-  padding: 30px;
-  margin: 50px 0;
-  border-radius: 20px;
-}
-
-.help-form .title-help h1{
-  text-align: center;
-  color: var(--primary-color);
-}
-
-.help-form .title-help p{
-  text-align: center;
-  color:var(--color-grey);
-}
-
-.help-form .title-help{
-  margin-bottom: 40px;
-}
-
-.help-input{
-  width: 90%;
-  margin: auto;
+.help-form-wrapper {
+    max-width: 95% !important;
+    margin: 80px auto 80px !important;
 }
 
 
-.help-input input{
-  width: 100%;
-  padding: 0.5rem; /* 8px */
-  margin-top: 5px;
-  margin-bottom: 0.9375rem; /* 15px */
-  border: 0.0625rem solid #ccc; /* 1px */
-  border-radius: 0.25rem; /* 4px */
+
+/* ########### MQ ################ */
+
+@media (min-width:576px) {
+    .help-form-wrapper{
+        max-width: 75% !important;
+    }
 }
 
-.help-input textarea{
-  width: 100%;
-  padding: 0.5rem; /* 8px */
-  margin-top: 5px;
-  margin-bottom: 0.9375rem; /* 15px */
-  border: 0.0625rem solid #ccc; /* 1px */
-  border-radius: 0.25rem; /* 4px */
-  resize: none;
+@media (min-width:768px) {
+    .help-form-wrapper{
+        max-width: 70% !important;
+    }
 }
 
-.help-submit-btn{
-  border: none;
-  color: var(--color-white);
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  padding: 10px 20px;
+@media (min-width:992px) {
+    .help-form-wrapper{
+        max-width: 65% !important;
+    }
 }
 
-
-/* ################################################################################
-                                    Footer
-  ################################################################################### */
-
-  .help-footer {
-    padding: 1.875rem; /* 30px */
-    background-color: var(--primary-color);
-    color: #ffffff;
-  }
-  
-  .help-footer ul {
-    line-height: 1.875rem; /* 30px */
-  }
-  
-  .help-footer ul li {
-    font-size: 1.125rem; /* 18px */
-    cursor: pointer;
-  }
-  
-  .help-footer ul li a{
-    text-decoration: none;
-    color: #fbeede;
-  }
-  
-  .footer-logo p {
-    max-width: 18.75rem; /* 300px */
-    align-self: center;
-    margin-left: 1.25rem; /* 20px */
-  }
-  
-  .copyright {
-    text-align: center;
-    margin-top: 0.625rem; /* 10px */
-  }
+@media (min-width:1200px) {
+    .help-form-wrapper{
+        max-width: 700px !important;
+    }
+}

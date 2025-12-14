@@ -1,16 +1,18 @@
 
 import { Link } from 'react-router-dom';
-import pis_logo1 from '../assets/images/pisLogo1.png';
-import al_dicret from '../assets/images/home-alumni-directory.png';
-import mem_prog from '../assets/images/home-membership-program.png';
-import event_cal from '../assets/images/home-event-calender.png';
-import dis_forums from '../assets/images/home-discussion-forums.png';
-import profile from '../assets/images/home-profile.png';
-import profile1 from '../assets/images/home-profile1.png';
-import collab from '../assets/images/home-collaboration.png';
+
+import PIS_logo from '../assets/images/PIS-logo.png';
+import book from '../assets/images/open-book.png';
+import user_group from '../assets/images/user-group.png';
+import calender from '../assets/images/reminder.png';
+import discuss from '../assets/images/discuss.png';
+import user from '../assets/images/user.png';
+import user_account from '../assets/images/user-account.png';
+import teamwork from '../assets/images/teamwork.png';
+
 import './home.css';
 
-//CODE BY DARSH
+// //CODE BY DARSH
 import axios from 'axios';
 import { useState, useEffect } from "react";
 
@@ -37,116 +39,236 @@ const Home = () => {
 
     return (
         <>
-        <div id="home"></div>
-            <header className="home-header">
-                <div className="container">
-                    <div className="navbar flex">
-                        <div className="Logo-Title">
-                            <Link to="/" className="logo-title">
-                                <img src={pis_logo1} alt="" width={60} />
-                                <h1 className="web-title">PeerInSync</h1>
+
+            <div id='home'></div>
+
+            {/* header starts */}
+            <header className='position-absolute start-0 end-0 bg-transparent '>
+                <nav className="navbar navbar-expand-lg ">
+                    <div className="container d-flex justify-content-between ">
+
+                        {/* logo */}
+                        <div>
+                            <Link to="/" className="navbar-brand">
+                                <img src={PIS_logo} alt="" width="125px" />
                             </Link>
                         </div>
 
-                        <nav className="right-part">
-                            <ul className="menu-bar">
-                                <li><Link to='/'>Home</Link></li>
-                                <li><Link to='/About'>About</Link></li>
-                                <li><Link to='/Help'>Help</Link></li>
-                            </ul>
-                        </nav>
+                        {/* navbar */}
+                        <div>
+                            {/* offcanvas Button */}
+                            <button className="navbar-toggler border me-3 text-cs-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHome" aria-controls="offcanvasRight">
+                                <i className="ri-menu-line"></i>
+                            </button>
+
+                            {/* navbar */}
+                            <div className="collapse navbar-collapse">
+                                <ul className="navbar-nav gap-4 me-auto mb-2 mb-lg-0">
+                                    <li className="nav-item">
+                                        <Link className="nav-link text-cs-primary" to="/">Home</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link text-cs-primary" to="/About">About</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link text-cs-primary" to="/Help">Help</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                {/* offcanvas */}
+                <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasHome" aria-labelledby="offcanvasRightLabel">
+                    <div className="offcanvas-header">
+                        <h5 className="offcanvas-title" id="offcanvasRightLabel">Navbar</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div className="offcanvas-body">
+                        <ul className="nav d-block">
+                            <li className="nav-item">
+                                <Link className="nav-link text-black" to="/" data-bs-dismiss="offcanvas">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link text-black" to="/About">About</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link text-black" to="/Help">Help</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </header>
+            {/* header ends */}
 
-            <main>
-                <section className="banner">
-                    <div className="container">
-                        <h2>Connecting Student and Alumni For Mentorship, Career and Growth</h2>
-                        <p>A platform to guide, connect and inspire students through Alumni experience and industry insights </p>
-                        <div className="banner-button">
-                            <Link to="/Registration"><button type="button">Join Us</button></Link>
-                            <Link to="/Login"><button type="button">Login</button></Link>
+            {/* main starts */}
+            <main className='bg-cs-primary pb-3'>
+
+                {/* banner starts */}
+                <section className='banner header home-banner py-5 d-flex justify-content-center align-items-center text-cs-primary'>
+                    <div className="container z-2">
+                        <div className="row">
+                            <div className="col-sm-12 col-md-10 col-xl-8">
+                                <div className="banner-card">
+                                    <h2 className='display-6 fw-medium lh-base mt-5'>Connecting Student and Alumni For Mentorship, Career and Growth</h2>
+                                    <p className='fs-4'>A platform to guide, connect and inspire students through Alumni experience and industry insights </p>
+                                    <div className='d-flex gap-2'>
+                                        <Link className='btn btn-outline-cs-success fs-5 px-3' to="/Register">Join Us</Link>
+                                        <Link className='btn btn-outline-cs-success fs-5 px-3' to="/Login">Login</Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
 
                     </div>
                 </section>
+                {/* banner ends */}
 
-                <section className="why-us">
+                {/* Why PeerInSync starts */}
+                <section className='bg-cs-secondary rounded-2 m-4 p-3'>
                     <div className="container">
-                        <h2>Why PeerInSync?</h2>
-                        <div className="card-container flex content">
-                            <div className="card">
-                                <img src={al_dicret} alt="" />
-                                <h3>Alumni Directory</h3>
-                                <p>Find and Connect with Alumni</p>
+                        <h2 className='text-center text-cs-heading py-4'>Why PeerInSync?</h2>
+
+                        <div className="row g-4">
+                            <div className="col-xl-3 col-md-6">
+                                <div className="why-card bg-white rounded-3 h-100 py-4">
+                                    <div className='text-center mb-3'>
+                                        <img src={book} alt="" />
+                                    </div>
+                                    <h5 className='text-center text-subheading'>Alumni Directory</h5>
+                                    <p className='text-center text-body'>Find and Connect with Alumni</p>
+                                </div>
                             </div>
-                            <div className="card">
-                                <img src={mem_prog} alt="" />
-                                <h3>Membership Program</h3>
-                                <p>One-on-one guidance from industry experts</p>
+                            <div className="col-xl-3 col-md-6">
+                                <div className="why-card bg-white rounded-3 h-100 p-4">
+                                    <div className='text-center mb-3'>
+                                        <img src={user_group} alt="" />
+                                    </div>
+                                    <h5 className='text-center text-subheading'>Membership Program</h5>
+                                    <p className='text-center text-body lh-sm'>One-on-one guidance from industry experts</p>
+                                </div>
                             </div>
-                            <div className="card">
-                                <img src={event_cal} alt="" />
-                                <h3>Event Calender</h3>
-                                <p>Stay updated with upcoming webinars, seminars, and alumni talks</p>
+                            <div className="col-xl-3 col-md-6">
+                                <div className="why-card bg-white rounded-3 h-100 p-4">
+                                    <div className='text-center mb-3'>
+                                        <img src={calender} alt="" />
+                                    </div>
+                                    <h5 className='text-center text-subheading'>Event Calender</h5>
+                                    <p className='text-center text-body lh-sm'>Stay updated with upcoming webinars, seminars, and alumni talks</p>
+                                </div>
                             </div>
-                            <div className="card">
-                                <img src={dis_forums} alt="" />
-                                <h3>Discussion Forums</h3>
-                                <p>Connect, collaborate, and share industry insights.</p>
+                            <div className="col-xl-3 col-md-6">
+                                <div className="why-card bg-white rounded-3 h-100 p-4">
+                                    <div className='text-center mb-3'>
+                                        <img src={discuss} alt="" />
+                                    </div>
+                                    <h5 className='text-center text-subheading'>Discussion Forums</h5>
+                                    <p className='text-center text-body lh-sm '>Connect, collaborate, and share industry insights.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                {/* Why PeerInSync ends */}
 
-                <section className="works">
+                {/* How-it-wroks starst  */}
+                <section>
                     <div className="container">
-                        <h2>How It Works</h2>
-                        <div className="card-container flex content ">
-                            <div className="card">
-                                <img src={profile} alt="" />
-                                <h3>Sign up as</h3>
-                                <p>Student or Alumni</p>
+
+                        <h2 className='text-center text-cs-heading py-4'>How It Works</h2>
+
+                        <div className="row">
+                            <div className="col-lg-4">
+                                <div className="how-card text-center bg-cs-secondary rounded-3 p-4 m-3">
+                                    <h5 className='text-start text-cs-heading'>Step-1</h5>
+                                    <div className='mb-3'>
+                                        <img src={user} alt="" />
+                                    </div>
+                                    <h5 className='text-subheading mb-0'>Sign Up as</h5>
+                                    <p className='text-body'>Student or Alumni</p>
+                                </div>
                             </div>
-                            <div className="card">
-                                <img src={profile1} alt="" />
-                                <p>Build your profile & interests</p>
+                            <div className="col-lg-4">
+                                <div className="how-card text-center bg-cs-secondary rounded-3 p-4 m-3">
+                                    <h5 className='text-start text-cs-heading'>Step-2</h5>
+                                    <div className='mb-3'>
+                                        <img src={user_account} alt="" />
+                                    </div>
+                                    <p className='text-body lh-sm'>Build your profile & <br /> interests</p>
+                                </div>
                             </div>
-                            <div className="card">
-                                <img src={collab} alt="" />
-                                <h3>Connect-Learn</h3>
-                                <p>& Collaborate</p>
+                            <div className="col-lg-4">
+                                <div className="how-card text-center bg-cs-secondary rounded-3 p-4 m-3">
+                                    <h5 className='text-start text-cs-heading'>Step-3</h5>
+                                    <div className='mb-3'>
+                                        <img src={teamwork} alt="" />
+                                    </div>
+                                    <h5 className='text-subheading mb-0'>Connect - Learn</h5>
+                                    <p className='text-body'>& Collaborate</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                {/* How-it-wroks ends */}
+
             </main>
+            {/* main ends */}
 
-            <footer className="home-footer">
-                <div className="container ">
-                    <nav className="flex justify-content">
-                        <ul className="footer-bar">
-                            <li><a href="#home">Home</a></li>
-                            <li><Link to='/About'>About</Link></li>
-                            <li><Link to='/Help'>Help</Link></li>
-                        </ul>
-                        <div className="footer-logo flex">
-                            <Link to="/" className="logo-title">
-                                <img src={pis_logo1} alt="" width={60} />
-                                <h1 className="web-title">PeerInSync</h1>
-                            </Link>
-                            <p>Connecting Students and Alumni for Mentorship and Growth</p>
+            {/* footer starts */}
+            <footer>
+
+                {/* footer-1 starts */}
+                <section className='bg-cs-footer1 py-4'>
+                    <div className="container">
+                        <div className="row align-items-center">
+                            <div className="col-lg-4">
+                                <div className="footer-card d-flex justify-content-center">
+                                    <ul className="nav">
+                                        <li className="nav-item">
+                                            <a className="nav-link text-success fw-medium" href="#home">Home</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link text-success fw-medium" to="/About">About</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link text-success fw-medium" to="/Help">Help</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-4">
+                                {/* logo */}
+                                <div className='footer-card text-center'>
+                                    <Link to="/" className="navbar-brand">
+                                        <img src={PIS_logo} alt="" width="80px" />
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-4">
+                                <div className="footer-card">
+                                    <p className='m-0 text-center text-lg-start text-footer'>Connecting Students and Alumni for Mentorship and Growth</p>
+                                </div>
+                            </div>
                         </div>
-                    </nav>
-                    <p className="copyright"><i className="ri-copyright-line"></i> 2025 PeerInSync. Built by Student for Students</p>
-                </div>
-            </footer>
+                    </div>
+                </section>
+                {/* footer-1 ends */}
 
-            {/* <div>
-                {backendGreet && <p> Response from backend: {backendGreet}</p>}
-            </div> */}
+                {/* footer-2 starts */}
+                <section className='bg-cs-footer2 p-4'>
+                    <div className="container">
+                        <p className='text-white text-center m-0'><i className="ri-copyright-line"></i>2025 PeerInSync. Built by Student for Students</p>
+                    </div>
+                </section>
+                {/* footer-2 ends */}
+
+            </footer>
+            {/* footer ends */}
+
 
 
 

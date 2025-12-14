@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+// import react from "react";
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Login/Login.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 const Login = () => {
 
@@ -26,44 +27,61 @@ const Login = () => {
     };
 
     return (
+
+
         <>
             <main>
-                <section className='login-form'>
+
+                <section className='login-form-wrapper bg-cs-secondary rounded-3 px-1 py-3 px-sm-4'>
                     <form onSubmit={handleSubmit}>
 
-                        <div className='back-button'>
-                            <Link to="/"><i className="ri-arrow-left-line"></i></Link>
+                        {/* back button & title  */}
+                        <div className='mb-5'>
+                            <Link className='text-cs-heading text-decoration-none fs-3' to="/"><i className="ri-arrow-left-line"></i></Link>
+
+                            <div className='text-cs-heading text-center'>
+                                <h2 className='display-6 fw-medium'>Login</h2>
+                                <p className='lh-sm fw-medium'>Login to connet with <br /> our website</p>
+                            </div>
+
                         </div>
 
-                        <div className='title-login'>
-                            <h1>Login</h1>
-                            <h5>Login to connect with <br />our website</h5>
+                        {/* form part  */}
+                        <div className='row g-4'>
+
+                            {/* email */}
+                            <div className='col-12'>
+                                <div className="login-card d-flex gap-3 bg-white rounded-3 p-4 align-items-center">
+                                    <span className='fs-4'><i className="ri-mail-line"></i></span>
+                                    <input className='border-0' type="email" name="email" autoComplete="email" placeholder="Email Id" value={formData.email} onChange={handleChange} required />
+                                </div>
+                            </div>
+
+                            {/* password */}
+                            <div className="col-12">
+                                <div className="login-card d-flex gap-3 bg-white rounded-3 p-4 align-items-center">
+                                    <i className="ri-lock-password-line"></i>
+
+                                    <input className='border-0' name="password" value={formData.password} autoComplete="current-password" onChange={handleChange} placeholder="Password" type={showPassword ? "text" : "password"} required />
+
+                                    <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line"} onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}></i>
+                                </div>
+                            </div>
+
                         </div>
 
+                        {/* forgot password and login button */}
+                        <div>
+                            <p className='mt-4 text-primary'>Forgot Password</p>
 
-                        <div className="input-login">
-                            <i className="ri-mail-line"></i>
-                            <input type="email" placeholder="Email Id" name="email" autoComplete="email" value={formData.email} onChange={handleChange}  required />
-                        </div>
-
-                        <div className="input-login">
-                            <i className="ri-lock-password-line"></i>
-                            
-                            <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" autoComplete="current-password" value={formData.password} onChange={handleChange} required />
-
-                            <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line"} onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}></i>
-                        </div>
-
-                        <div className='forget-password'>
-                            <span>Forgot Password</span>
-                        </div>
-
-                        <div className='login-button'>
-                            <button type='submit'>Login</button>
+                            <div className='text-center'>
+                                <button className='btn btn-dark px-3' type='submit'>Login</button>
+                            </div>
                         </div>
 
                     </form>
                 </section>
+
             </main>
         </>
     );

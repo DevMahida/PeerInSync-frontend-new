@@ -1,260 +1,49 @@
-:root{
-    --primary-color:#0051ae;
-    --secondary-color:#fbeede;
-    --bg-color:#d3e9fb;
-    --color-white:#FFF;
-    --banner-bg:
-  }
-
-  
-  .col-1{width: 8.33%;}
-  .col-2{width: 16.67%;}
-  .col-3{width: 25%;}
-  .col-4{width: 33.33%;}
-  .col-5{width: 41.67%;}
-  .col-6{width: 50%;}
-  .col-7{width: 58.33%;}
-  .col-8{width: 66.67%;}
-  .col-9{width: 75%;}
-  .col-10{width: 83.33%;}
-  .col-11{width: 91.67%;}
-  .col-12{width: 100%;}
-  
-  *[class *= "col-"]{
-      margin-top: 30px;
-      padding: 0 20px;
-    }
-    
-.flex{
-        display: flex;
-        flex-wrap: wrap;
+.text-cs-primary{
+    color: #fdf6ea !important ;
 }
 
-.justify-content1 {
-    justify-content: space-evenly;
+.bg-cs-secondary{
+    background-color: #f5e9d4 !important; 
 }
 
-.justify-content {
-    justify-content: space-around;
+.text-cs-heading{
+    color: #2e2e2e !important ;
 }
 
-.content {
-    justify-content: space-between;
+.text-subheading{
+    color: #4a4a4a !important;
 }
 
-.all-center{
-    display: flex;
-    justify-items: center;
-    align-items: center;
+.text-body{
+    color: #6e6e6e !important;
 }
 
-.row-reverse {
-    flex-direction: row-reverse;
+.bg-cs-footer1{
+    background-color: #f8e7d1 !important;
 }
 
-/* ################################################################################
-                                    Header
-  ################################################################################### */
-
-.about-header {
-    background: var(--primary-color);
+.bg-cs-footer2{
+    background-color: #838c48;
 }
 
-.about-header .navbar {
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.625rem 0;
-    /* 10px */
+.bg-cs-banner{
+    background-color: #E8D9C5;
 }
 
-.about-header .logo-title {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+/* Who we are section */
 
-.about-header .logo-title img {
-    width: 5rem;
-    /* 80px */
-    border-radius: 15%;
-}
 
-.about-header .web-title {
-    color: var(--secondary-color);
-    display: flex;
-    padding-left: 0.625rem;
-    /* 10px */
-}
-
-.about-header .right-part {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.about-header .menu-bar {
-    display: flex;
-    align-items: center;
-}
-
-.about-header .menu-bar li {
-    color: var(--secondary-color);
-    cursor: pointer;
-    margin: 1.25rem;
-    /* 20px */
-}
-
-.about-header .menu-bar li a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-/* ################################################################################
-                                    Main
-  ################################################################################### */
-
-/*################################## Banner #######################################*/
-.about-banner {
-    padding: 5rem;
-    /* 80px */
-    width: 100%;
-    color: var(--color-white);
-    background-image: url('../assets/images/about-banner.webp'), linear-gradient(135deg, #4ba8f5, #1e88e500);
-    background-size: contain 300px;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-blend-mode: color;
-}
-
-.about-banner h2 {
-    font-size: 3.125rem;
-    /* 50px */
-    font-weight: 500;
-    line-height: 1.35;
-}
-
-.about-banner p {
-    font-size: 1.25rem;
-    /* 20px */
-    margin: 1.25rem 0;
-    /* 40px */
-}
-
-/*################################## who we are #######################################*/
-.who-we-are {
-    margin: 1.875rem;
-    /* 30px */
-    padding: 1.875rem 0;
-    /* 30px */
-    background-color: #e7f3fc;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px #c0bfbf;
-
-}
-
-.data {
-    padding: 2rem 0;
-}
-
-.who-we-are h2 {
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.who-we-are-data p{
-    font-size: 18px;
-    font-weight: 500;
-    order:2;
+.who-data p{
     text-align: justify;
 }
 
-/* .data p {
-    font-weight: 500;
-    max-width: 500px;
-    margin: 10px;
-    order: 2;
+.who-data img{
+    width: 70%;
+}
+
+
+/* vision */
+
+.vision-data p{
     text-align: justify;
-    font-size: 18px;
-} */
-
-.banner-side-img {
-    display: block;
-    order: 1;
-    margin: 20px 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-/*################################## Our Mission #######################################*/
-.our-mission {
-    text-align: center;
-    margin: 30px;
-    padding: 30px 0;
-    border-radius: 10px;
-}
-
-.our-mission h2 {
-    margin-bottom: 30px;
-    color: var(--primary-color);
-}
-
-.OM-card {
-    width: 250px;
-    background-color: #FFF;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px #c0bfbf;
-}
-
-.OM-card h3 {
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-/*################################## Our Mission #######################################*/
-.our-vision {
-    margin: 30px;
-    padding: 30px;
-    background-color: #e7f3fc;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px #c0bfbf;
-    text-align: center;
-}
-
-.our-vision h2 {
-    color: var(--primary-color);
-}
-
-.our-vision p {
-    font-size: 18px;
-    max-width: 1100px;
-    margin: auto;
-    margin-top: 20px;
-}
-
-/* ################################################################################
-                                    Footer
-  ################################################################################### */
-
-.about-footer {
-    padding: 30px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.about-footer ul {
-    line-height: 1.875rem;
-    /* 30px */
-}
-
-.about-footer ul li {
-    font-size: 1.125rem;
-    /* 18px */
-    cursor: pointer;
-}
-
-.about-footer ul li a {
-    text-decoration: none;
-    color: var(--secondary-color);
 }
