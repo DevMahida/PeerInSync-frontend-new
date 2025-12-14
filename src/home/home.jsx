@@ -185,8 +185,8 @@ const Home = () => {
                                     <div className='mb-3'>
                                         <img src={user} alt="" />
                                     </div>
-                                    <h5 className='text-subheading mb-0'>Sign Up as</h5>
-                                    <p className='text-body'>Student or Alumni</p>
+                                    <h5 className='text-subheading mb-0'>Sign Up</h5>
+                                    <p className='text-body'>as Student or Alumni</p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
@@ -278,5 +278,6 @@ const Home = () => {
         </>
     );
 }
+
 
 export default Home;
