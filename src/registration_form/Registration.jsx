@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // CODE BY DARSH
 import axios from 'axios';
 
-import '../registration_form/registration.css';
+import '../registration_form/Registration.css';
 // import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
