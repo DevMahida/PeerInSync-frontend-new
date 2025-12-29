@@ -1,5 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import './bootstrap/bootstrap.min.css';
+import './bootstrap/bootstrap.bundle.min.js';
 import './index.css';
 import App from './App.jsx';
 

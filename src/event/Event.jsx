@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import axios from 'axios';
-
 import pis_logo1 from '../assets/images/PIS-logo.png';
 import profile from '../assets/images/profile.png';
-import man from '../assets/images/man.png';
-import man1 from '../assets/images/man1.png';
+import axios from 'axios';
 
-import './dashboard.css';
 
-const Dashboard = () => {
+import './Event.css';
+
+const Event = () => {
 
     const [userData, setUserData] = useState({
 
@@ -44,71 +41,29 @@ const Dashboard = () => {
         return () => scrollSpy.dispose();
     }, []);
 
-    // const logout = (e) => { localStorage.removeItem('userinfo'); window.location.href = '/'; }
-
     const logout = (e) => {
 
         localStorage.removeItem('userinfo');
-        toast.success("Logged out successfully");
-
-        setTimeout(() => {
-            navigate("/");
-        }, 1200); // enough time for toast to appear
-    };
-
-    // const deleteAccount = async (e) => {
-
-    //     await axios.delete('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/delete/' + userData.uniqid)
-    //         .then(() => {
-    //             window.alert("Account Deleted Successfully");
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //             window.alert("Unexpected Error" + err.message);
-    //         });
-    // }
+        window.location.href = '/';
+    }
 
     const deleteAccount = async (e) => {
 
-        const confirmDelete = window.confirm(
-            "Are you sure you want to delete your account? This action cannot be undone."
-        );
-
-        if (!confirmDelete) return;
-
-        await axios
-            .delete(
-                'https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/delete/' +
-                userData.uniqid
-            )
+        await axios.delete('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/delete/' + userData.uniqid)
             .then(() => {
-                // keep existing behavior
-                // window.alert("Account Deleted Successfully");
-
-                // cleanup
-                localStorage.removeItem("userinfo");
-
-                // toast added
-                toast.success("Account deleted successfully");
-
-                // redirect after toast
-                setTimeout(() => {
-                    navigate("/");
-                }, 1500);
+                window.alert("Account Deleted Successfully");
             })
             .catch((err) => {
                 console.log(err);
-                window.alert("Unexpected Error " + err.message);
-
-                toast.error("Failed to delete account");
+                window.alert("Unexpected Error" + err.message);
             });
-    };
+    }
 
     return (
         <>
-
             {/* Header starts  */}
             <header className="header-dash sticky-top">
+
                 <div className="container d-flex justify-content-between align-items-center" id="navbar">
 
                     {/* logo nav */}
@@ -125,7 +80,7 @@ const Dashboard = () => {
                         </div>
 
                         {/* nav links */}
-                        <nav className="ms-3 d-none d-lg-block  ">
+                        <nav className="ms-3 d-none d-lg-block">
                             <ul className="nav gap-4 align-items-center">
                                 <li className="nav-item d-flex">
                                     <NavLink to="/dashboard" className={({ isActive }) => `nav-link fs-6 fw-medium px-0 ${isActive ? "active" : ""}`}>
@@ -288,239 +243,179 @@ const Dashboard = () => {
             </header>
             {/* Header ends */}
 
-
             {/* main starts */}
             <main>
 
-                {/* banner-activity starts */}
+                {/* banner starts */}
                 <section>
                     <div className="container">
+
+                        {/* banner - participated events */}
                         <div className="row mt-4 g-3">
 
                             {/* banner */}
                             <div className="col-lg-8">
-                                <div className="dash-banner transition-02 rounded-4 d-flex align-items-center">
-                                    <div className="ms-3 text-cs-primary">
-                                        <p className="h1">Welcome, {userData.name}</p>
-                                        <span className="h5">Every connection opens a new door!</span>
+                                <div className="event-banner rounded-3 transition-02 d-flex align-items-center">
+                                    <div className='text-cs-primary px-5'>
+
+                                        <h1>Events & Webinars</h1>
+                                        <p>Learn from Alumni through seminars and webinars</p>
+
                                     </div>
                                 </div>
                             </div>
 
-                            {/* activity */}
+                            {/* Events */}
                             <div className="col-lg-4 ">
-                                <div className="border-brown transition-02 bg-cs-secondary1 p-3 rounded-4 text-brown">
-                                    <span className="h4 text-dark">Your Activity</span>
+                                <div className="border-brown hight-275px bg-cs-secondary1 p-3 rounded-4 text-brown">
+                                    <span className="h4 ">Participated Events</span>
 
-                                    <div className="row my-2 my-sm-5">
-                                        <div className="col-4">
-                                            <div>
-                                                <span className="d-block text-center display-4 fw-medium">12</span>
-                                                <span className="d-block text-center fw-medium">Connection</span>
-                                            </div>
-                                        </div>
-                                        <div className="col-4">
-                                            <div>
-                                                <span className="d-block text-center display-4 fw-medium">3</span>
-                                                <span className="d-block text-center lh-sm fw-medium">Unread Messages</span>
-                                            </div>
-                                        </div>
-                                        <div className="col-4">
-                                            <div>
-                                                <span className="d-block text-center display-4 fw-medium">2</span>
-                                                <span className="d-block text-center lh-sm fw-medium">Upcoming Events</span>
+                                    <div className="row mt-3">
+                                        <div className="col-12">
+                                            <div className='bg-cs-primary1 p-2 rounded-3 transition-02'>
+                                                <div className='d-flex justify-content-between align-items-center'>
+                                                    <p className='h5'>Resume Building Workshop</p>
+                                                    <button className="border-1 rounded-3 p-2 bg-cs-tertory1">Details</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
-                {/* banner-activity ends */}
+                {/* banner ends */}
 
-
-                {/* upcoming events stsrts */}
-                <section className="mt-3">
-                    <div className="container">
-                        <div className="border-brown bg-cs-secondary1 p-3 rounded-4 text-brown">
-
-                            <span className="h4 text-brown">Upcoming Events</span>
-
-                            {/* upcoming event cards */}
-                            <div className="row mt-2 g-3">
-                                <div className="col-lg-6 col-xl-4">
-                                    <div className="bg-cs-primary1 p-3 rounded-3 transition-02 h-130px">
-
-                                        {/* event card body */}
-                                        <div className="d-flex justify-content-between">
-
-                                            {/* icon - detail */}
-                                            <div className="d-flex gap-2">
-                                                {/* icon */}
-                                                <div>
-                                                    <div className="d-flex fs-5 justify-content-center align-items-center icon-span rounded-5 bg-cs-tertory1">
-                                                        <i className="ri-video-on-fill"></i>
-                                                    </div>
-                                                </div>
-
-                                                {/* detail */}
-                                                <div>
-                                                    <h5 className="pb-0 mb-1">Webinar: Career in Cybersecurity</h5>
-                                                    <p className="mb-0">By Alumni - Rahul Shah</p>
-                                                    <span><i className="ri-calendar-line"></i> 28 Dec | 6:00 PM</span>
-                                                </div>
-                                            </div>
-
-                                            {/* btn */}
-                                            <div>
-                                                <button className="border-1 rounded-3 ms-3 py-1 px-3 bg-cs-tertory1">View <br />Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-xl-4">
-                                    <div className="bg-cs-primary1 p-3 rounded-3 transition-02 h-130px">
-
-                                        {/* event card body */}
-                                        <div className="d-flex justify-content-between">
-
-                                            {/* icon - detail */}
-                                            <div className="d-flex gap-2">
-                                                {/* icon */}
-                                                <div>
-                                                    <div className="d-flex fs-4 justify-content-center align-items-center icon-span rounded-5 bg-cs-tertory1">
-                                                        <i className="ri-shake-hands-fill"></i>
-                                                    </div>
-                                                </div>
-
-                                                {/* detail */}
-                                                <div>
-                                                    <h5 className="pb-0 mb-3">Networking for Students & Alumni</h5>
-                                                    <span><i className="ri-calendar-line"></i> 4 Jan | 5:00 PM</span>
-                                                </div>
-                                            </div>
-
-                                            {/* btn */}
-                                            <div>
-                                                <button className="border-1 rounded-3 ms-3 py-1 px-3 bg-cs-tertory1">View <br />Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-xl-4">
-                                    <div className="bg-cs-primary1 p-3 rounded-3 transition-02 h-130px">
-
-                                        {/* event card body */}
-                                        <div className="d-flex justify-content-between">
-
-                                            {/* icon - detail */}
-                                            <div className="d-flex gap-2">
-                                                {/* icon */}
-                                                <div>
-                                                    <div className="d-flex fs-4 justify-content-center align-items-center icon-span rounded-5 bg-cs-tertory1">
-                                                        <i className="ri-briefcase-4-fill"></i>
-                                                    </div>
-                                                </div>
-
-                                                {/* detail */}
-                                                <div>
-                                                    <h5 className="pb-0 mb-3">Internship & Career Fair</h5>
-                                                    <span><i className="ri-calendar-line"></i> 12 Jan | 12:00 PM</span>
-                                                </div>
-                                            </div>
-
-                                            {/* btn */}
-                                            <div>
-                                                <button className="border-1 rounded-3 ms-3 py-1 px-3 bg-cs-tertory1">View <br />Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-                {/* upcoming events ends */}
-
-                {/* recommmended Alumni */}
+                {/* Event list starts */}
                 <section className="my-3">
                     <div className="container">
                         <div className="border-brown bg-cs-secondary1 p-3 rounded-4 text-brown">
 
-                            <span className="h4 text-brown">Recommended Alumni</span>
+                            <span className="h4 text-brown">Event List</span>
 
                             {/* recommend cards */}
                             <div className="row mt-2 g-3">
-                                <div className="col-md-6">
+
+                                <div className="col-lg-6">
+
                                     <div className="bg-cs-primary1 p-3 rounded-3 transition-02">
 
                                         {/* card body */}
                                         <div className="d-flex justify-content-between">
 
-                                            {/* icon - detail */}
+                                            {/* detail */}
                                             <div className="d-flex gap-2">
-                                                {/* icon */}
-                                                <div>
-                                                    <img className="img-fluid" src={man} alt="" />
-                                                </div>
+
 
                                                 {/* detail */}
                                                 <div>
-                                                    <h5 className="pb-0 mb-1">Amit Patel</h5>
-                                                    <p className="mb-0">Senior Software Engineer @ Google</p>
-                                                    <span>Expertise: DSA, System Design</span>
+                                                    <h4 className="pb-0 mb-1">Resume Building Workshop</h4>
+                                                    <p className="mb-0"><strong>Workshop by</strong> Rahul Mehta (Alumni – HR Specialist)</p>
+                                                    <span><strong>Platform</strong> : Google Meet</span><br />
+                                                    <span><i class="ri-time-fill"></i> 25 Sept, 4:00 PM</span>
                                                 </div>
                                             </div>
 
                                             {/* btn */}
-                                            <div className="d-flex align-items-center">
-                                                <button className="border-1 rounded-3 p-2 bg-cs-tertory1">View Details</button>
+                                            <div className="d-flex align-items-center gap-3">
+                                                <span class="badge text-bg-success">3 days left</span>
+                                                <button className="border-1 rounded-3 p-2 bg-cs-tertory1">Register</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-lg-6">
                                     <div className="bg-cs-primary1 p-3 rounded-3 transition-02">
 
                                         {/* card body */}
                                         <div className="d-flex justify-content-between">
 
-                                            {/* icon - detail */}
+                                            {/* detail */}
                                             <div className="d-flex gap-2">
-                                                {/* icon */}
-                                                <div>
-                                                    <img className="img-fluid" src={man1} alt="" />
-                                                </div>
 
                                                 {/* detail */}
                                                 <div>
-                                                    <h5 className="pb-0 mb-1">Vinod Sharma</h5>
-                                                    <p className="mb-0">Data Scientist @ Amazon</p>
-                                                    <span>Expertise: Machine Learning, AI</span>
+                                                    <h4 className="pb-0 mb-1">Higher Studies & Abroad Guidance</h4>
+                                                    <p className="mb-0"><strong>Webinar by:</strong> Alumni Panel (MS & MBA Graduates)</p>
+                                                    <span><strong>Platform</strong> : Google Meet</span><br />
+                                                    <span><i class="ri-time-fill"></i> 28 Sept, 5:00 PM</span>
                                                 </div>
                                             </div>
 
                                             {/* btn */}
-                                            <div className="d-flex align-items-center">
-                                                <button className="border-1 rounded-3 mx-2 p-2 bg-cs-tertory1">View Details</button>
+                                            <div className="d-flex align-items-center gap-3">
+                                                <span class="badge text-bg-success">5 days left</span>
+                                                <button className="border-1 rounded-3 p-2 bg-cs-tertory1">Register</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div className="col-lg-6">
+                                    <div className="bg-cs-primary1 p-3 rounded-3 transition-02">
+
+                                        {/* card body */}
+                                        <div className="d-flex justify-content-between">
+
+                                            {/* detail */}
+                                            <div className="d-flex gap-2">
+
+
+                                                {/* detail */}
+                                                <div>
+                                                    <h4 className="pb-0 mb-1">Data Science Career Talk</h4>
+                                                    <p className="mb-0"><strong>Talk by:</strong> Kunal Patel (Data Scientist, Amazon)</p>
+                                                    <span><strong>Platform</strong> : Google Meet</span><br />
+                                                    <span><i class="ri-time-fill"></i> 7 Oct, 5:00 PM</span>
+                                                </div>
+                                            </div>
+
+                                            {/* btn */}
+                                            <div className="d-flex align-items-center gap-3">
+                                                <span class="badge text-bg-warning">Upcoming</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="bg-cs-primary1 p-3 rounded-3 transition-02">
+
+                                        {/* card body */}
+                                        <div className="d-flex justify-content-between">
+
+                                            {/* detail */}
+                                            <div className="d-flex gap-2">
+
+
+                                                {/* detail */}
+                                                <div>
+                                                    <h4 className="pb-0 mb-1">Cybersecurity Trends Seminar</h4>
+                                                    <p className="mb-0"><strong>Seminar by: </strong> Dr. Neha Kulkarni (Cybersecurity Consultant)</p>
+                                                    <span><strong>Auditorium</strong></span><br />
+                                                    <span><i class="ri-time-fill"></i> 8 Oct, 3:30 PM</span>
+                                                </div>
+                                            </div>
+
+                                            {/* btn */}
+                                            <div className="d-flex align-items-center gap-3">
+                                                <span class="badge text-bg-warning">Upcoming</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
                     </div>
                 </section>
-
-
-
+                {/* event list ends */}
 
 
             </main>
             {/* main ends */}
+
 
             {/* footer starts */}
             <footer className="bg-cs-footer01 p-4">
@@ -530,10 +425,8 @@ const Dashboard = () => {
             </footer>
             {/* footer ends */}
 
-
-
         </>
     );
 }
 
-export default Dashboard; 
+export default Event;

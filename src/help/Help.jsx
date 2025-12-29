@@ -1,5 +1,6 @@
 // import react from "react;"
 import { useState } from "react";
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PIS_logo from '../assets/images/PIS-logo.png';
 import './Help.css';
@@ -9,7 +10,7 @@ const Help = () => {
     const initialFormData = {
         fullName: '',
         email: '',
-        message: '',
+        message: '', 
     };
 
 
@@ -19,15 +20,28 @@ const Help = () => {
     const handleChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value 
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Your issue is recorded');
-        console.log("Form submitted:", JSON.stringify(formData));
-        setFormData(initialFormData); // Reset the form after submission
+        
+        axios.post('https://peerinsync-backend-server.onrender.com/helpDesk/help', JSON.stringify(formData), {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(() => {
+                window.alert("Your Issue Is Recorded");
+                console.log("Form submitted:", JSON.stringify(formData));
+                setFormData(initialFormData);
+            })
+
+            .catch((err) => {
+                console.log(err);
+                window.alert("Error submiting data." + err.message);
+            });
     };
 
 

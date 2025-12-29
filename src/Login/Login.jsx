@@ -1,12 +1,20 @@
 // import react from "react";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Login/Login.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const navigate = useNavigate();
+
+    const initialFormData = {
+        email: '',
+        password: ''
+    };
+
 
 
     const [formData, setFormData] = useState({
@@ -16,7 +24,25 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Submitted Data:', formData);
+        
+        axios.post('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/login', JSON.stringify(formData), {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((response) => {
+            window.alert("Logged in Successfully");
+            console.log("Form submitted:", JSON.stringify(formData));
+
+            localStorage.setItem('userinfo', JSON.stringify(response.data));
+
+            navigate('/Dashboard');
+            setFormData(initialFormData);
+        })
+        .catch((err) => {
+            console.log(err);
+            window.alert("Error submiting data." + err.message);
+        });
     };
 
     const handleChange = (e) => {
@@ -72,7 +98,7 @@ const Login = () => {
 
                         {/* forgot password and login button */}
                         <div>
-                            <p className='mt-4 text-primary'>Forgot Password</p>
+                            <p className='forgot-link mt-4 text-primary link-primary'>Forgot Password</p>
 
                             <div className='text-center'>
                                 <button className='btn btn-dark px-3' type='submit'>Login</button>

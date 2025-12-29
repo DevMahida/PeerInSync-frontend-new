@@ -8,6 +8,8 @@ import Register from './registration_form/Registration.jsx';
 import Login from './Login/Login.jsx';
 import About from './about/About.jsx';
 import Help from './help/Help.jsx';
+import Event from './event/Event.jsx';
+import Dashboard from './dashboard/dashboard.jsx';
 
 function AppRoutes() {
   useOffcanvasCleanup();
@@ -16,11 +18,13 @@ function AppRoutes() {
     <>
       <ScrollToTop />
       <Routes>
+        <Route path='/About' element={<About />} />
+        <Route path='/Dashboard' element={<Dashboard />} /> 
         <Route path='/' element={<Home />} />
         <Route path='/Register' element={<Register />} />
+        <Route path='/Event' element={<Event />} />
         <Route path='/Login' element={<Login />} />
-        <Route path='/About' element={<About />} />
-        <Route path='/Help' element={<Help />} />
+        <Route path='/Help' element={<Help />} /> 
       </Routes>
     </>
   );

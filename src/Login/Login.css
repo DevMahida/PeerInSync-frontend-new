@@ -21,6 +21,10 @@
     font-size: 19px;
 }
 
+.forgot-link{
+    cursor: pointer;
+}
+
 
 
 /* ########### MQ ################ */

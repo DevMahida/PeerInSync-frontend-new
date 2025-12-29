@@ -70,8 +70,7 @@ const Registration = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormData(initialFormData);
-
+        
         axios.post('https://peerinsync-backend-server.onrender.com/loginRegisterRoutes/signup', JSON.stringify(formData), {
             headers: {
                 "Content-Type": "application/json"
@@ -81,6 +80,7 @@ const Registration = () => {
                 window.alert("You have registered successfully.");
                 navigate('/Login');
                 console.log("Form submitted:", JSON.stringify(formData));
+                setFormData(initialFormData);
             })
 
             .catch((err) => {
@@ -206,11 +206,11 @@ const Registration = () => {
                                     <label className='fs-5 mb-1' htmlFor="current_year_of_study">Current Year of Studying:</label><br />
                                     <select className="form-select" name="current_year_of_study" id="current_year_of_study" value={formData.current_year_of_study} onChange={handleChange} required>
                                         <option >Year of Studying</option>
-                                        <option value="1st year">1st Year</option>
-                                        <option value="2nd year">2nd Year</option>
-                                        <option value="3rd year">3rd Year</option>
-                                        <option value="4th year">4th Year</option>
-                                        <option value="graduated">Graduated</option>
+                                        <option value="1">1st Year</option>
+                                        <option value="2">2nd Year</option>
+                                        <option value="3">3rd Year</option>
+                                        <option value="4">4th Year</option>
+                                        <option value="grad">Graduated</option>
                                     </select>
                                 </div>
                             </div>
@@ -271,11 +271,8 @@ const Registration = () => {
                         {/* Register botton */}
                         <div>
                             <div className='mt-3 d-flex gap-3'>
-                                {/* <button className='btn cs-btn px-3' type='submit'>Register</button>
-                                <button className='btn cs-btn1 px-3' type='submit'>Register</button>
-                                <button className='btn cs-btn2 px-3' type='submit'>Register</button> */}
-                                <button className='btn cs-btn3 px-3' type='submit'>Register</button>
-                                {/* <button className='btn cs-btn4 px-3' type='submit'>Register</button> */}
+                                <button className='btn btn-success px-3' type='submit'>Register</button>
+
                             </div>
                         </div>
 
